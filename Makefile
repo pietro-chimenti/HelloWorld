@@ -1,20 +1,28 @@
 # Simple MakeFile for HelloWorld
 # Pietro Chimenti 22/08/2016
 
+CC      = gcc
+CFLAGS  = -lstdc++ `root-config --cflags --glibs` $(MFLAGS)
+RM      = rm -f
+
+export CC
+export CFLAGS
+export RM
+
 default: all
 
 all: HelloWorld_gcc HelloWorld_root
 
 HelloWorld_gcc: 
-	cd HelloWorld_gcc && $(MAKE) MFLAGS="$(MFLAGS)"
+	cd HelloWorld_gcc && $(MAKE) 
 	cd ..
 
 HelloWorld_root:
-	cd HelloWorld_root && $(MAKE) MFLAGS="$(MFLAGS)"
+	cd HelloWorld_root && $(MAKE) 
 	cd ..
 
 tests: 
-#	cd tests && $(MAKE)  MFLAGS="$(MFLAGS)"
+#	cd tests && $(MAKE)  
 	cd ..
 
 clean:

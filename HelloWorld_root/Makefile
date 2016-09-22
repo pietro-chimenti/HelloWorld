@@ -1,10 +1,6 @@
 # Simple MakeFile for HelloWorld
 # Pietro Chimenti 22/08/2016
 
-CC	= g++
-CFLAGS	= `root-config --cflags --glibs`  $(MFLAGS)
-RM	= rm -f
-
 default: all
 
 all: HelloRootWorld
