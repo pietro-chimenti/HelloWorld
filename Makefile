@@ -2,7 +2,7 @@
 # Pietro Chimenti 22/08/2016
 
 CC      = gcc
-CFLAGS  = -lstdc++ `root-config --cflags --glibs` $(MFLAGS)
+CFLAGS  = -lstdc++ `root-config --cflags --glibs` `fltk-config --cxxflags`   `fltk-config --ldflags` $(MFLAGS)
 RM      = rm -f
 
 export CC
@@ -11,7 +11,7 @@ export RM
 
 default: all
 
-all: HelloWorld_gcc HelloWorld_root
+all: HelloWorld_gcc HelloWorld_root OOProgramming
 
 HelloWorld_gcc: 
 	cd HelloWorld_gcc && $(MAKE) 
@@ -20,6 +20,11 @@ HelloWorld_gcc:
 HelloWorld_root:
 	cd HelloWorld_root && $(MAKE) 
 	cd ..
+
+OOProgramming:
+	cd OOProgramming && $(MAKE) 
+	cd ..
+
 
 tests: 
 #	cd tests && $(MAKE)  
@@ -30,9 +35,11 @@ clean:
 	cd ..
 	cd HelloWorld_root && $(MAKE) clean
 	cd ..
+	cd OOProgramming && $(MAKE) clean
+	cd ..
 	cd tests && $(MAKE) clean
 	cd ..
  
 
 
-.PHONY: clean HelloWorld_root HelloWorld_gcc tests
+.PHONY: clean HelloWorld_root HelloWorld_gcc OOProgramming tests
