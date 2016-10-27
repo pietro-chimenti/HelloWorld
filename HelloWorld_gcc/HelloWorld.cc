@@ -12,6 +12,5 @@
 int main()
 {
   std::cout << "Hello World!" << std::endl;
-  std::cout << "Hello QTcreator" << std::endl;
   return 0;
 }

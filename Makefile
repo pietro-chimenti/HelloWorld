@@ -37,9 +37,6 @@ clean:
 	cd ..
 	cd OOProgramming && $(MAKE) clean
 	cd ..
-	cd tests && $(MAKE) clean
-	cd ..
- 
 
 
 .PHONY: clean HelloWorld_root HelloWorld_gcc OOProgramming tests
