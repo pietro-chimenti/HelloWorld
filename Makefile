@@ -11,7 +11,7 @@ export RM
 
 default: all
 
-all: HelloWorld_gcc HelloWorld_root OOProgramming
+all: HelloWorld_gcc HelloWorld_root OOProgramming docs
 
 HelloWorld_gcc: 
 	cd HelloWorld_gcc && $(MAKE) 
@@ -30,6 +30,9 @@ tests:
 #	cd tests && $(MAKE)  
 	cd ..
 
+docs:
+	doxygen HelloDoxygenConfig 
+
 clean:
 	cd HelloWorld_gcc && $(MAKE) clean
 	cd ..
@@ -37,6 +40,6 @@ clean:
 	cd ..
 	cd OOProgramming && $(MAKE) clean
 	cd ..
-
+	rm -r doc/*
 
 .PHONY: clean HelloWorld_root HelloWorld_gcc OOProgramming tests
