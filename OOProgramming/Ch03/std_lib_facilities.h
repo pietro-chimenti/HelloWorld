@@ -28,7 +28,7 @@ inline void keep_window_open()
 //------------------------------------------------------------------------------
 
 // Helper function to show an error message
-inline void error(const string& errormessage)
+inline void simple_error(const string& errormessage)
 {
     cerr << errormessage << endl;
     throw runtime_error(errormessage);
