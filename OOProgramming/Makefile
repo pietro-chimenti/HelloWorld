@@ -3,7 +3,7 @@
 
 default: all
 
-all: Ch02 Ch03 
+all: Ch02 Ch03 Ch04 
 
 Ch02: 
 	cd Ch02 && $(MAKE) 
@@ -12,9 +12,15 @@ Ch02:
 Ch03:
 	cd Ch03 && $(MAKE)
 	cd ..
+
+Ch04:
+	cd Ch04 && $(MAKE)
+	cd ..
+
 clean:
 	cd Ch02 && $(MAKE) clean
 	cd Ch03 && $(MAKE) clean
+	cd Ch04 && $(MAKE) clean
 	cd ..
 
-.PHONY: Ch02 Ch03 clean
+.PHONY: Ch02 Ch03 Ch04 clean

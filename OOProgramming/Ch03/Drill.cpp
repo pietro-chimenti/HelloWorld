@@ -26,7 +26,7 @@ int main()
 		cout<<"If you see "<<friend_name<<" please ask him to call me.\n";
 } 
 	if (age <= 0 || age >= 110)
-		simple_error("You are kidding!");
+		error("You are kidding!");
 	else
 	cout<<"I heard you just had a birthday and you are "<<age<<" years old!";
 	if ( age == 17 ) {
