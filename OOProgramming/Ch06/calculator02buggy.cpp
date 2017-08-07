@@ -75,7 +75,7 @@ Token Token_stream::get()
     cin >> ch;    // note that >> skips whitespace (space, newline, tab, etc.)
 
     switch (ch) {
-    case ';':    // for "print"
+    case '=':    // for "print"
     case 'x':    // for "quit"
     case '(': case ')': case '+': case '-': case '*': case '/': 
         return Token(ch);        // let each character represent itself
@@ -135,6 +135,7 @@ double term()
         case '*':
             left *= primary();
             t = ts.get();
+            break;
         case '/':
             {    
                 double d = primary();
@@ -165,7 +166,7 @@ double expression()
             t = ts.get();
             break;
         case '-':
-            left += term();    // evaluate Term and subtract
+            left -= term();    // evaluate Term and subtract
             t = ts.get();
             break;
         default: 
@@ -180,16 +181,25 @@ double expression()
 int main()
 try
 {
+
+    cout << "Welcome to our simple calculator." << endl;
+    cout << "Please enter expressions using floating-point numbers." << endl;
+    cout << "We deal with the following operations: +,-,*,/" << endl;
+    cout << "You can use ( and ) to group calculations." << endl;
+    cout << "Use = to get the result and x to exit." << endl; 
+
     double val = 0;
     while (cin) {
         Token t = ts.get();
 
-        if (t.kind == 'x') break; // 'q' for quit
-        if (t.kind == ';')        // ';' for "print now"
+        if (t.kind == 'x') break; // 'x' for quit
+        if (t.kind == '='){        // '=' for "print now"
             cout << "=" << val << '\n';
-        else
+        }
+        else{
             ts.putback(t);
-        val = expression();
+            val = expression();
+        }
     }
 	keep_window_open();
 }
