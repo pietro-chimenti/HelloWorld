@@ -6,6 +6,13 @@ int main(){
 		int j = i;
 		cout << i << '\t' << j << '\n';
 	}
+	
+	cout << '\n';
+	
+	for(char i = 'A'; i <= 'Z'; i++){
+		int j = i;
+		cout << i << '\t' << j << '\n';
+	}
 
 return 0;
 }
