@@ -36,7 +36,7 @@ int main(){
 		break;
 
 		default:
-			cout << "Sotty, I don't know a unit called '" << unit << "'.\n";
+			cout << "Sorry, I don't know a unit called '" << unit << "'.\n";
 		break;
 	}
 
