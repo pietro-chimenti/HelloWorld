@@ -3,7 +3,7 @@
 int square(int v){
 	int sqr;
 
-	for(int i = v; i != 0; i--)
+	for(int i = 0; i != v; i++)
 		sqr = sqr + v;
 		
 return sqr;
