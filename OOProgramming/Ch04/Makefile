@@ -12,7 +12,7 @@
 
 INCLUDES = 
 LIBS     = -lstdc++
-CXXFLAGS = $(INCLUDES) -Wall -time -O3 -DNDEBUG
+CXXFLAGS = $(INCLUDES) -Wall -std=c++11 -time -O3 -DNDEBUG # adicionei o '-std=c++11' para não haver problemas com o uso de vetores (há diversos erros com o c++98)
 LIBFLAGS =  
 AR       = ar
 
